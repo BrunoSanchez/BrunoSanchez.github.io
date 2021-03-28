@@ -23,7 +23,15 @@ Engineering for optimizing Machinge Learning model performance.
 * I have a PhD. in Astronomy and I am able to create and use mathematical and
 physical models, to describe and explain data from diverse experiments.
 
-* Additionally, I have skills in software developement,
+* Additionally, I have skills in software developement using Python, R as well as
+SQL and Fortran.
+
+* I posses the know-how on scientific data-analysis pipeline design using Object Oriented Programming, Model-View-Controller patterns as well as diverse workflows for Extrac-Transform-Load processes.
+
+* I am also able to optimize numeric calculus for a wide range of problems using a tool set involving many technologies, such as Hadoop, Dask, Tensorflow, Keras, etc.
+
+* As an advocate of good practices of software developing I use Git version control techniques for
+collaborating, and I am proficient in software testing as well, using techniques like unit-testing, continuous integration and property based testing.
 
 ### Publications
 
