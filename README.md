@@ -36,8 +36,8 @@ Extract-Transform-Load processes.
 * As an advocate of good practices of software developing I use Git version control techniques for
 collaborating, and I am proficient in software testing as well, using techniques like unit-testing, continuous integration and property based testing.
 
-## Publications
-
+## Main Publications
+<script type="text/javascript" src="https://scholars.duke.edu/widgets/api/v0.9/people/awards/all.js?uri=https://scholars.duke.edu/individual/per3919932&formatting=abbreviated&style=yes&start=2009-03-02&end=2021-03-01"> </script>
 
 ## Links
 
