@@ -10,6 +10,8 @@ My scientific contributions are mainly in the time domain astronomy field, and i
 
 >My main interests include Cosmology, time-domain astronomy with transient events and periodical variability, image analysis as well as applications of Machine Learning in these research areas.
 
+I am also interested in B shenanigans
+
 Additionally I have worked with _Gravitational Wave Astronomy_, mostly related with Electromagnetic/Optical Counterparts to Compact Binary Merger GW events.
 
 I enjoy creating different data visualizations, and I have experience in Feature
