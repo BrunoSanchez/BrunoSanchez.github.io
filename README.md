@@ -37,11 +37,12 @@ Extract-Transform-Load processes.
 collaborating, and I am proficient in software testing as well, using techniques like unit-testing, continuous integration and property based testing.
 
 ## Main Publications
-<script type="text/javascript" src="https://scholars.duke.edu/widgets/api/v0.9/people/awards/all.js?uri=https://scholars.duke.edu/individual/per3919932&formatting=abbreviated&style=yes&start=2009-03-02&end=2021-03-01"> </script>
-
-## Links
 
 A full list of publications is available in [ADS](https://ui.adsabs.harvard.edu/public-libraries/NQfpQEIrQFGsSnBzZTI9yQ), [Google Scholar](https://scholar.google.com/citations?user=XrrlfKgAAAAJ&hl=en&gmla=AJsN-F6bMm7Zdnje_bv7m_eF6WL-ozOP82hAoH5bEMXflKwstKbzl0TeqVS4tH6KnoMeHxiBlOmcRMynSBSokzuNsGR2lOLuvdmEeMyqS0lmHikZSzHzr6Sg8THyAZPNXxuwLMjf00Wa), [ORCID](https://orcid.org/0000-0002-8687-0669) and [ResearchGate](https://www.researchgate.net/profile/Bruno-Sanchez-5).
 
-My personal contact information is at [Duke Physics](https://scholars.duke.edu/person/bruno.sanchez).
+
+----------
+## Links
+
+Find my personal contact information at [Duke Physics](https://scholars.duke.edu/person/bruno.sanchez).
 
