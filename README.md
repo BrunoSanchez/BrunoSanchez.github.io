@@ -1,7 +1,5 @@
 # Bruno Sánchez
 
-![Hi!](imgs/headshotBOS.jpg)
-
 
 I am an astronomer working at Duke University trying to understand our universe and its evolution through the discovery and characterization of astrophysical transient events.
 
