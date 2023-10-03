@@ -2,15 +2,21 @@
 
 
 >I am an **astronomer** working at Duke University
-trying to understand our universe and its evolution through the discovery and characterization of astrophysical transient events.
+trying to understand our universe and its evolution through the discovery and
+>characterization of astrophysical transient events.
 
-My scientific contributions are mainly in the time domain astronomy field, and include image analysis and Machine Learning, as well as statistical studies with observational data from telescopes around the world.
+My scientific contributions are mainly in the time domain astronomy field, and 
+include image analysis and Machine Learning, as well as statistical studies with 
+observational data from telescopes around the world.
 
 ## Research topics
 
->My main interests include Cosmology, time-domain astronomy with transient events and periodical variability, image analysis as well as applications of Machine Learning in these research areas.
+>My main interests include Cosmology, time-domain astronomy with transient events
+>and periodical variability, image analysis as well as applications of Machine
+>Learning in these research areas.
 
-Additionally I have worked with _Gravitational Wave Astronomy_, mostly related with Electromagnetic/Optical Counterparts to Compact Binary Merger GW events.
+Additionally I have worked with _Gravitational Wave Astronomy_, mostly related 
+with Electromagnetic/Optical Counterparts to Compact Binary Merger GW events.
 
 I enjoy creating different data visualizations, and I have experience in Feature
 Engineering for optimizing Machinge Learning models performance.
@@ -27,15 +33,27 @@ SQL and Fortran.
 Oriented Programming, software design patterns, as well as diverse workflows for
 Extract-Transform-Load processes.
 
-* I am also able to optimize numeric calculus for a wide range of problems using a tool set involving many technologies, such as Spark, Dask, Tensorflow, Keras, etc.
+* I have experience applying Machine Learning models to astronomical data, using
+both supervised and non-supervised learning. I have know-how to implement both
+feature based ML as well as Neural Networks that don't depend on features (such
+Deep Convolutional Networks, Auto-Encoders, LSTM networks and diverse types of
+embeddings).
 
-* As an advocate of good practices of software developing I use Git version control techniques for
-collaborating, and I am proficient in software testing as well, using techniques like unit-testing, continuous integration and property based testing.
+* I am also able to optimize numeric calculus for a wide range of problems using
+a tool sets involving many technologies, such as Spark, Dask, Tensorflow, Keras, etc.
+
+* As an advocate of good practices of software developing I use Git version control
+techniques for collaborating, and I am proficient in software testing as well,
+using techniques like unit-testing, continuous integration and property based testing.
 
 ## Main Publications
 
-A full list of publications is available in [ADS](https://ui.adsabs.harvard.edu/public-libraries/NQfpQEIrQFGsSnBzZTI9yQ), [Google Scholar](https://scholar.google.com/citations?user=XrrlfKgAAAAJ&hl=en&gmla=AJsN-F6bMm7Zdnje_bv7m_eF6WL-ozOP82hAoH5bEMXflKwstKbzl0TeqVS4tH6KnoMeHxiBlOmcRMynSBSokzuNsGR2lOLuvdmEeMyqS0lmHikZSzHzr6Sg8THyAZPNXxuwLMjf00Wa), [ORCID](https://orcid.org/0000-0002-8687-0669) and [ResearchGate](https://www.researchgate.net/profile/Bruno-Sanchez-5).
-
+A full list of publications is available in 
+[ADS](https://ui.adsabs.harvard.edu/public-libraries/NQfpQEIrQFGsSnBzZTI9yQ).
+You can also find me in 
+[Google Scholar](https://scholar.google.com/citations?user=XrrlfKgAAAAJ&hl=en&gmla=AJsN-F6bMm7Zdnje_bv7m_eF6WL-ozOP82hAoH5bEMXflKwstKbzl0TeqVS4tH6KnoMeHxiBlOmcRMynSBSokzuNsGR2lOLuvdmEeMyqS0lmHikZSzHzr6Sg8THyAZPNXxuwLMjf00Wa), 
+[ORCID](https://orcid.org/0000-0002-8687-0669) and 
+[ResearchGate](https://www.researchgate.net/profile/Bruno-Sanchez-5).
 
 ----------
 ## Links
