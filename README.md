@@ -1,15 +1,18 @@
 # About me
 
 
->I am an **astronomer** working at the Centre de Physique des Particules de
-Marseille, a CNRS laboratory, trying to understand our universe and its
-evolution through the discovery and characterization of specific astrophysical
-transient events called Type Ia Supernovae.
+>I am an **astronomer** working in the
+[Renoir](https://www.cppm.in2p3.fr/web/fr/recherche/cosmologie/) team at the
+[Centre de Physique des Particules de Marseille](https://www.cppm.in2p3.fr), a
+CNRS laboratory, trying to understand our universe and its evolution through
+the discovery and characterization of specific astrophysical transient events
+called Type Ia Supernovae.
 
 My scientific contributions are mainly in the time domain astronomy field, and
 include difference image analysis and Machine Learning, as well as statistical
 studies with observational data from telescopes around the world, including the
-final data release of the Dark Energy Survey Supernova Program [DES-SN5YR](https://ui.adsabs.harvard.edu/abs/2024ApJ...975....5S/abstract).
+final data release of the Dark Energy Survey Supernova Program
+[DES-SN5YR](https://ui.adsabs.harvard.edu/abs/2024ApJ...975....5S/abstract).
 
 ## Current Position
 
