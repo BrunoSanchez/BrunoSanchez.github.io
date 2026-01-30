@@ -3,9 +3,19 @@
 // ========================================
 function animateCounter(element) {
   const target = parseInt(element.getAttribute('data-target'));
+  
+  // Validate target is a valid number
+  if (isNaN(target)) {
+    console.warn('Invalid data-target attribute for counter animation');
+    return;
+  }
+  
   const duration = 2000; // 2 seconds
   const increment = target / (duration / 16); // 60fps
   let current = 0;
+  
+  // Reset to 0 to prevent race conditions
+  element.textContent = '0';
   
   const updateCounter = () => {
     current += increment;
@@ -92,10 +102,10 @@ function initParallax() {
   
   let ticking = false;
   
-  window.addEventListener('scroll', () => {
+  const handleScroll = () => {
     if (!ticking) {
       window.requestAnimationFrame(() => {
-        const scrolled = window.pageYOffset;
+        const scrolled = window.scrollY; // Use scrollY instead of deprecated pageYOffset
         const heroContent = document.querySelector('.hero-content');
         
         if (heroContent && scrolled < window.innerHeight) {
@@ -109,7 +119,9 @@ function initParallax() {
       
       ticking = true;
     }
-  });
+  };
+  
+  window.addEventListener('scroll', handleScroll);
 }
 
 // ========================================
@@ -154,8 +166,20 @@ function updateActiveSection() {
 // ========================================
 async function fetchGitHubStats() {
   const username = 'BrunoSanchez';
+  const CACHE_KEY = 'github_stats_cache';
+  const CACHE_DURATION = 3600000; // 1 hour in milliseconds
   
   try {
+    // Check cache first to avoid rate limits
+    const cached = localStorage.getItem(CACHE_KEY);
+    if (cached) {
+      const { data, timestamp } = JSON.parse(cached);
+      if (Date.now() - timestamp < CACHE_DURATION) {
+        updateStatsFromCache(data);
+        return;
+      }
+    }
+    
     // Note: This is a simple implementation without authentication
     // For production, consider using a backend proxy to avoid rate limits
     const response = await fetch(`https://api.github.com/users/${username}`);
@@ -167,48 +191,54 @@ async function fetchGitHubStats() {
     
     const data = await response.json();
     
-    // Update stat cards with real data
-    const statCards = document.querySelectorAll('.stat-card');
-    if (statCards.length >= 2 && data.public_repos) {
-      statCards[1].querySelector('.stat-number').setAttribute('data-target', data.public_repos);
-    }
-    
     // Fetch additional stats (repositories for stars count)
+    // Note: Limited to 100 repos. For users with more repos, consider pagination
     const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
+    let totalStars = 0;
+    let totalForks = 0;
+    
     if (reposResponse.ok) {
       const repos = await reposResponse.json();
-      const totalStars = repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
-      const totalForks = repos.reduce((sum, repo) => sum + repo.forks_count, 0);
-      
-      if (statCards.length >= 3 && totalStars > 0) {
-        statCards[2].querySelector('.stat-number').setAttribute('data-target', totalStars);
-      }
-      
-      if (statCards.length >= 4 && totalForks > 0) {
-        statCards[3].querySelector('.stat-number').setAttribute('data-target', totalForks);
-      }
+      totalStars = repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+      totalForks = repos.reduce((sum, repo) => sum + repo.forks_count, 0);
     }
+    
+    const statsData = {
+      public_repos: data.public_repos,
+      totalStars,
+      totalForks
+    };
+    
+    // Cache the results
+    localStorage.setItem(CACHE_KEY, JSON.stringify({
+      data: statsData,
+      timestamp: Date.now()
+    }));
+    
+    updateStatsFromCache(statsData);
   } catch (error) {
     console.log('Could not fetch GitHub stats, using default values:', error.message);
   }
 }
 
-// ========================================
-// Add Hover Effect Enhancement
-// ========================================
-function enhanceCardHovers() {
-  const cards = document.querySelectorAll('.project-card, .research-card, .stat-card');
+function updateStatsFromCache(data) {
+  const statCards = document.querySelectorAll('.stat-card');
   
-  cards.forEach(card => {
-    card.addEventListener('mouseenter', function(e) {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
-    });
-  });
+  // Safely update each stat card
+  if (statCards[1] && data.public_repos) {
+    const element = statCards[1].querySelector('.stat-number');
+    if (element) element.setAttribute('data-target', data.public_repos);
+  }
+  
+  if (statCards[2] && data.totalStars) {
+    const element = statCards[2].querySelector('.stat-number');
+    if (element) element.setAttribute('data-target', data.totalStars);
+  }
+  
+  if (statCards[3] && data.totalForks) {
+    const element = statCards[3].querySelector('.stat-number');
+    if (element) element.setAttribute('data-target', data.totalForks);
+  }
 }
 
 // ========================================
@@ -218,13 +248,15 @@ function initScrollIndicator() {
   const scrollIndicator = document.querySelector('.scroll-indicator');
   if (!scrollIndicator) return;
   
-  window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
+  const handleScroll = () => {
+    if (window.scrollY > 300) {
       scrollIndicator.style.opacity = '0';
     } else {
       scrollIndicator.style.opacity = '1';
     }
-  });
+  };
+  
+  window.addEventListener('scroll', handleScroll);
 }
 
 // ========================================
@@ -253,7 +285,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initParallax();
   updateActiveSection();
-  enhanceCardHovers();
   initScrollIndicator();
   
   // Fetch GitHub stats (with fallback to default values)
