@@ -139,6 +139,6 @@ preview.html
 test_preview.html
 
 # Bundler
-Gemfile*
+Gemfile.lock
 .bundle/
 vendor/
