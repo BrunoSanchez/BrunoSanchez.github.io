@@ -8,13 +8,13 @@
 }
 
 :root {
-  /* Cosmic Color Palette */
-  --cosmic-deep-blue: #0a0e27;
-  --cosmic-purple: #1e1b4b;
-  --cosmic-blue: #2563eb;
-  --cosmic-cyan: #06b6d4;
-  --cosmic-violet: #8b5cf6;
-  --cosmic-pink: #ec4899;
+  /* Cosmic Color Palette - Blue/Cyan Theme */
+  --cosmic-deep-blue: #0a1929;
+  --cosmic-purple: #0d47a1;
+  --cosmic-blue: #1976d2;
+  --cosmic-cyan: #00bcd4;
+  --cosmic-violet: #0288d1;
+  --cosmic-pink: #26c6da;
   
   /* Neutral Colors */
   --color-white: #ffffff;
@@ -75,9 +75,9 @@ body {
   background: linear-gradient(135deg, 
     var(--cosmic-deep-blue) 0%, 
     var(--cosmic-purple) 25%,
-    #1e3a8a 50%,
-    var(--cosmic-violet) 75%,
-    var(--cosmic-pink) 100%);
+    #1565c0 50%,
+    var(--cosmic-blue) 75%,
+    var(--cosmic-cyan) 100%);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
   z-index: -1;
@@ -316,7 +316,7 @@ body {
    Stats Section
    ======================================== */
 .stats-section {
-  background: linear-gradient(135deg, var(--cosmic-purple) 0%, #1e3a8a 100%);
+  background: linear-gradient(135deg, var(--cosmic-purple) 0%, #0d47a1 100%);
   padding: var(--spacing-2xl) 0;
   color: var(--color-white);
 }
@@ -326,7 +326,7 @@ body {
 }
 
 .stats-section .section-title::after {
-  background: linear-gradient(90deg, var(--cosmic-cyan), var(--cosmic-pink));
+  background: linear-gradient(90deg, var(--cosmic-cyan), var(--cosmic-blue));
 }
 
 .stats-grid {
