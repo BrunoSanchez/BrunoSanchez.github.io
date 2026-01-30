@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 preview.html
 Gemfile*
+test_preview.html
