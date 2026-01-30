@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Loading Test - BrunoSanchez.github.io</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Asset Loading Test Page</h1>
+    
+    <div class="test-section">
+        <h2>What is this?</h2>
+        <p>This is a diagnostic page to help troubleshoot why the website might not be loading correctly on your laptop.</p>
+        <p>If you're seeing this page with proper styles and colors, it means:</p>
+        <ul>
+            <li>✅ This HTML file is loading correctly</li>
+            <li>✅ Inline CSS is working</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>Asset Loading Tests</h2>
+        <div id="css-test" class="status warning">⏳ Testing CSS loading...</div>
+        <div id="js-test" class="status warning">⏳ Testing JavaScript loading...</div>
+        <div id="img-test" class="status warning">⏳ Testing image loading...</div>
+        <div id="jekyll-test" class="status warning">⏳ Testing Jekyll environment...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Common Issues & Solutions</h2>
+        
+        <h3>Issue 1: Plain HTML, no styles</h3>
+        <p><strong>Symptom:</strong> You see plain text without any colors or formatting.</p>
+        <p><strong>Cause:</strong> CSS file not loading (probably due to incorrect path or Jekyll not running).</p>
+        <p><strong>Solution:</strong></p>
+        <ol>
+            <li>Make sure you're running Jekyll: <code>bundle exec jekyll serve</code></li>
+            <li>Access via <code>http://localhost:4000</code> (NOT file:// URLs)</li>
+            <li>Check terminal for errors</li>
+        </ol>
+
+        <h3>Issue 2: Images not showing</h3>
+        <p><strong>Symptom:</strong> Broken image icons where photos should be.</p>
+        <p><strong>Cause:</strong> Image paths not resolving correctly.</p>
+        <p><strong>Solution:</strong></p>
+        <ol>
+            <li>Verify <code>imgs/headshotBOS.jpg</code> exists</li>
+            <li>Check <code>_config.yml</code> has correct <code>baseurl</code></li>
+            <li>Clear browser cache (Ctrl+Shift+R or Cmd+Shift+R)</li>
+        </ol>
+
+        <h3>Issue 3: Opening HTML file directly</h3>
+        <p><strong>Symptom:</strong> File path in browser shows <code>file:///...</code></p>
+        <p><strong>Cause:</strong> Opening HTML files directly without a server.</p>
+        <p><strong>Solution:</strong></p>
+        <ol>
+            <li><strong>Never</strong> open HTML files directly in browser</li>
+            <li>Always use Jekyll server: <code>bundle exec jekyll serve</code></li>
+            <li>Access via <code>http://localhost:4000</code></li>
+        </ol>
+    </div>
+
+    <div class="test-section">
+        <h2>How to Run Jekyll Properly</h2>
+        <pre style="background: #f4f4f4; padding: 15px; border-radius: 4px; overflow-x: auto;">
+# Step 1: Install dependencies (first time only)
+bundle install
+
+# Step 2: Serve the site
+bundle exec jekyll serve
+
+# Step 3: Open in browser
+# Go to: http://localhost:4000
+        </pre>
+        <p>See <code>LOCAL_PREVIEW.md</code> for detailed instructions.</p>
+    </div>
+
+    <div class="test-section">
+        <h2>Quick Diagnostics</h2>
+        <p><strong>Current page URL:</strong> <code id="current-url"></code></p>
+        <p><strong>Protocol:</strong> <code id="protocol"></code></p>
+        <p><strong>Host:</strong> <code id="host"></code></p>
+        <p id="protocol-warning" class="status error" style="display: none;">
+            ⚠️ <strong>WARNING:</strong> You're viewing this as a file! Jekyll sites must be served via HTTP.
+            <br>Please run <code>bundle exec jekyll serve</code> and visit <code>http://localhost:4000</code>
+        </p>
+    </div>
+
+    <script>
+        // Display current URL info
+        document.getElementById('current-url').textContent = window.location.href;
+        document.getElementById('protocol').textContent = window.location.protocol;
+        document.getElementById('host').textContent = window.location.host || 'None (local file)';
+
+        // Warn if viewing as file://
+        if (window.location.protocol === 'file:') {
+            document.getElementById('protocol-warning').style.display = 'block';
+            document.getElementById('jekyll-test').className = 'status error';
+            document.getElementById('jekyll-test').innerHTML = '❌ Not running through Jekyll server (file:// protocol detected)';
+        } else if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            document.getElementById('jekyll-test').className = 'status success';
+            document.getElementById('jekyll-test').innerHTML = '✅ Running on local server (correct!)';
+        } else {
+            document.getElementById('jekyll-test').className = 'status success';
+            document.getElementById('jekyll-test').innerHTML = '✅ Running on GitHub Pages';
+        }
+
+        // Test if custom CSS loads
+        const testCSSLoad = () => {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = '/assets/css/custom.css';
+            link.onload = () => {
+                document.getElementById('css-test').className = 'status success';
+                document.getElementById('css-test').innerHTML = '✅ CSS file loaded successfully';
+            };
+            link.onerror = () => {
+                document.getElementById('css-test').className = 'status error';
+                document.getElementById('css-test').innerHTML = '❌ CSS file failed to load - Check Jekyll is running and path is correct';
+            };
+            document.head.appendChild(link);
+        };
+
+        // Test if JS loads
+        const testJSLoad = () => {
+            const script = document.createElement('script');
+            script.src = '/assets/js/animations.js';
+            script.onload = () => {
+                document.getElementById('js-test').className = 'status success';
+                document.getElementById('js-test').innerHTML = '✅ JavaScript file loaded successfully';
+            };
+            script.onerror = () => {
+                document.getElementById('js-test').className = 'status error';
+                document.getElementById('js-test').innerHTML = '❌ JavaScript file failed to load - Check Jekyll is running and path is correct';
+            };
+            document.body.appendChild(script);
+        };
+
+        // Test if image loads
+        const testImageLoad = () => {
+            const img = new Image();
+            img.onload = () => {
+                document.getElementById('img-test').className = 'status success';
+                document.getElementById('img-test').innerHTML = '✅ Image loaded successfully';
+            };
+            img.onerror = () => {
+                document.getElementById('img-test').className = 'status error';
+                document.getElementById('img-test').innerHTML = '❌ Image failed to load - Check Jekyll is running and image exists';
+            };
+            img.src = '/imgs/headshotBOS.jpg';
+        };
+
+        // Run tests after a short delay
+        setTimeout(() => {
+            if (window.location.protocol !== 'file:') {
+                testCSSLoad();
+                testJSLoad();
+                testImageLoad();
+            } else {
+                document.getElementById('css-test').className = 'status error';
+                document.getElementById('css-test').innerHTML = '❌ Cannot test - not running through server';
+                document.getElementById('js-test').className = 'status error';
+                document.getElementById('js-test').innerHTML = '❌ Cannot test - not running through server';
+                document.getElementById('img-test').className = 'status error';
+                document.getElementById('img-test').innerHTML = '❌ Cannot test - not running through server';
+            }
+        }, 500);
+    </script>
+</body>
+</html>

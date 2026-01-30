@@ -1,0 +1,16 @@
+# Local development overrides
+# Use this config with: jekyll serve --config _config.yml,_config_dev.yml
+
+# For local development, use localhost (port is handled by Jekyll's --port flag)
+url: "http://localhost"
+baseurl: ""
+
+# Drafts and future posts disabled by default (set to true if needed)
+show_drafts: false
+future: false
+
+# Faster regeneration
+incremental: true
+
+# More verbose output for debugging
+verbose: true

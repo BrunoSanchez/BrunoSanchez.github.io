@@ -1,10 +1,29 @@
-theme: jekyll-theme-minimal
-
-logo: imgs/headshotBOS.jpg
+# Site settings
 title: Bruno O. Sánchez
 description: Astronomy PhD.
+logo: imgs/headshotBOS.jpg
 
+# GitHub Pages URL settings (critical for asset loading)
+url: "https://brunosanchez.github.io"  # the base hostname & protocol for your site
+baseurl: ""  # the subpath of your site, e.g. /blog (empty for username.github.io)
 
+# Theme settings
+theme: jekyll-theme-minimal
 remote_theme: pages-themes/minimal@v0.2.0
+
+# Plugins
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+  - jekyll-remote-theme
+
+# Build settings
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - .sass-cache
+  - .gitignore
+  - README.md
+  - LICENSE

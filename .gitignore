@@ -127,3 +127,18 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Jekyll build artifacts
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Test and preview files
+preview.html
+test_preview.html
+
+# Bundler
+Gemfile.lock
+.bundle/
+vendor/
