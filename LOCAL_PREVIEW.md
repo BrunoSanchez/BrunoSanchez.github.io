@@ -7,8 +7,8 @@ This guide helps you preview the website on your local machine.
 If you're having trouble, first open `test-assets.html` after starting Jekyll:
 
 ```bash
-# Start Jekyll
-jekyll serve
+# Start Jekyll (recommended)
+bundle exec jekyll serve
 
 # Then visit:
 http://localhost:4000/test-assets.html
@@ -35,8 +35,8 @@ gem install jekyll bundler
 # Navigate to the project directory
 cd /path/to/BrunoSanchez.github.io
 
-# Serve the site locally
-jekyll serve
+# Serve the site locally using bundler
+bundle exec jekyll serve
 
 # Open your browser to: http://localhost:4000
 ```
@@ -45,15 +45,19 @@ jekyll serve
 
 ```bash
 # Use both config files for local development
-jekyll serve --config _config.yml,_config_dev.yml
+bundle exec jekyll serve --config _config.yml,_config_dev.yml
 
 # Open your browser to: http://localhost:4000
 ```
 
-### Method 3: Using Bundler (If you have a Gemfile)
+### Method 3: Without Bundler (if bundle not available)
 
 ```bash
-bundle exec jekyll serve
+# Install Jekyll and webrick first
+gem install jekyll webrick
+
+# Then serve the site
+jekyll serve
 
 # Open your browser to: http://localhost:4000
 ```

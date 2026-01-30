@@ -1,6 +1,9 @@
 source "https://rubygems.org"
 
 # Jekyll
+# Note: GitHub Pages uses Jekyll 3.9.x, but we use 4.3+ for better local development
+# The site is designed to work with both versions
+# For exact GitHub Pages compatibility, use: gem "github-pages", group: :jekyll_plugins
 gem "jekyll", "~> 4.3"
 
 # Jekyll plugins
