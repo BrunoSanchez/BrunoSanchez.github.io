@@ -2,6 +2,20 @@
 
 This guide helps you preview the website on your local machine.
 
+## 🚀 Quick Diagnostic
+
+If you're having trouble, first open `test-assets.html` after starting Jekyll:
+
+```bash
+# Start Jekyll
+jekyll serve
+
+# Then visit:
+http://localhost:4000/test-assets.html
+```
+
+This diagnostic page will tell you exactly what's wrong!
+
 ## Prerequisites
 
 Make sure you have Jekyll installed:
